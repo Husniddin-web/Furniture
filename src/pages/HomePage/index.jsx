@@ -65,7 +65,7 @@ const HomePage = () => {
         const data = await response.json();
         console.log("Success:", data);
       } else {
-        console.error("Error:", response.statusText);
+        console.error("Error:", response);
       }
     } catch (error) {
       console.error("Error:", error);
