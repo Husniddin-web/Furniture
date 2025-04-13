@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HomePageWrapper,
   AdvertismentWrapper,
@@ -44,6 +44,37 @@ const HomePage = () => {
       text: "Скидка 15% на все подвесные светильники до 5 февраля",
     },
   ];
+
+  const sendPostRequest = async () => {
+    const payload = {
+      email: "example@example.com",
+      name: "John Doe",
+      message: "This is a default message.",
+    };
+
+    try {
+      const response = await fetch("http://3.122.24.252:3002/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Success:", data);
+      } else {
+        console.error("Error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    sendPostRequest();
+  }, []);
 
   return (
     <>
