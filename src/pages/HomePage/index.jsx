@@ -5,6 +5,7 @@ import {
   CategoryWrapper,
   CategorycardWrapper,
   WhyNorLightWrapper,
+  CategorycardMobileWrapper,
 } from "./home.style";
 import { Advertisment, CategoryCard, ReasonCard } from "../../components";
 import advrImg from "../../assets/images/advr.png";
@@ -45,6 +46,14 @@ const HomePage = () => {
       text: "Скидка 15% на все подвесные светильники до 5 февраля",
     },
   ];
+  const cards = [
+    <CategoryCard />,
+    <CategoryCard />,
+    <CategoryCard />,
+    <CategoryCard />,
+    <CategoryCard />,
+    <CategoryCard />,
+  ];
 
   return (
     <>
@@ -67,21 +76,47 @@ const HomePage = () => {
 
       <HomePageWrapper className="container">
         <CategoryWrapper>
-          <div className="catefory-title-wrapper">
-            <h1>Каталог</h1>
+          <div className="category-desktop-wrapper">
+            <div className="catefory-title-wrapper">
+              <h1>Каталог</h1>
+              <Link to="/" className="category-btn">
+                <p>Весь каталог</p>
+                <ArrowIcon />
+              </Link>
+            </div>
+            <CategorycardWrapper>
+              <CategoryCard />
+              <CategoryCard />
+              <CategoryCard />
+              <CategoryCard />
+              <CategoryCard />
+              <CategoryCard />
+            </CategorycardWrapper>
+          </div>
+          <div className="category-mobile-wrapper">
+            <div className="catefory-title-wrapper">
+              <h1>Каталог</h1>
+            </div>
+
+            <CategorycardMobileWrapper>
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                spaceBetween={10}
+                slidesPerView={2}
+                loop={cards.length > 4}
+                autoplay={{ delay: 3000 }}
+                pagination={{ clickable: true }}
+              >
+                {cards.map((card, i) => (
+                  <SwiperSlide key={i}>{card}</SwiperSlide>
+                ))}
+              </Swiper>
+            </CategorycardMobileWrapper>
             <Link to="/" className="category-btn">
               <p>Весь каталог</p>
               <ArrowIcon />
             </Link>
           </div>
-          <CategorycardWrapper>
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-          </CategorycardWrapper>
         </CategoryWrapper>
         <WhyNorLightWrapper>
           <div className="why-title-wrapper">

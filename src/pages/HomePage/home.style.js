@@ -20,7 +20,8 @@ export const AdvertismentWrapper = styled.div`
 
 export const CategoryWrapper = styled.div`
 
-    & > .catefory-title-wrapper{
+   .category-desktop-wrapper{
+     & > .catefory-title-wrapper{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -32,22 +33,48 @@ export const CategoryWrapper = styled.div`
             text-transform: capitalize;
             color: ${colors.mainGray};
          }
-         .category-btn{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 47px;
-            border: 1px solid ${colors.mainGray};
-            border-radius: 100px;
-            text-decoration: none;
-            cursor: pointer;
-            &> p{
-                text-decoration: none;
-                color: ${colors.mainGray};
-            }
-         }
+        }
     }
+    .category-btn{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       gap: 10px;
+       padding: 14px 47px;
+       border: 1px solid ${colors.mainGray};
+       border-radius: 100px;
+       text-decoration: none;
+       cursor: pointer;
+       &> p{
+           text-decoration: none;
+           color: ${colors.mainGray};
+       }
+    }
+
+
+
+   .category-mobile-wrapper{
+    .category-btn{
+        width: 300px;
+        display: flex;
+        margin: 0 auto;
+    }
+    display: none;
+   }
+
+
+    @media (max-width: 780px) {
+        .category-desktop-wrapper{
+            display: none;
+        }
+        .category-mobile-wrapper {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }   
+   }
 
 `
 
@@ -124,3 +151,11 @@ export const WhyNorLightWrapper = styled.div`
                }
          }
 `
+
+
+
+export const CategorycardMobileWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 20px;
+`;
