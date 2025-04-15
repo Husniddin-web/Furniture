@@ -3,10 +3,10 @@ import { colors } from "../../style/theme"
 
 export const InputWrapper = styled.div`
     position: relative;
+    width: 100%;
     .input{
         width: 100%;
         height: 50px;
-        width: 620px;
         padding: 0 16px;
         border: 1px solid ${colors.mainGray};
         border-radius: 100px;
@@ -16,7 +16,7 @@ export const InputWrapper = styled.div`
     }
     .search-icon{
         position: absolute;
-        left: 95%;
+        left: 85%;
         top: 50%;
         transform: translateY(-50%);
         pointer-events: none;

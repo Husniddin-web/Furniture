@@ -5,10 +5,10 @@ const Advertisment = (props) => {
   const { imgUrl, text } = props.data;
   return (
     <AdvrWrapper>
-      <p>
+      <p className="advertisment-title">
         {text} <span></span>
       </p>
-      <div>
+      <div className="advertisment-img">
         <img src={imgUrl} alt="" />
       </div>
     </AdvrWrapper>

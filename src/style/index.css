@@ -1,5 +1,8 @@
 :root {
   --main-color: white;
+  --gray: #454545;
+  --grayopacity: #45454550;
+  --light: #f2f2f2;
 }
 
 * {
@@ -12,9 +15,35 @@ body {
   font-family: "Manrope", sans-serif;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .container {
   width: 100%;
   max-width: 1316px;
-  padding: 0 8px;
   margin: 0 auto;
+}
+
+.phone-number {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gray);
+  cursor: pointer;
+}
+.footer-link {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  color: var(--grayopacity);
+}
+
+.mobile {
+  display: block;
+}
+.desktop {
+  display: none;
 }
